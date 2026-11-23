@@ -1,0 +1,49 @@
+{
+ "loc_nonblank": {
+  "java_main": [
+   53,
+   3180
+  ],
+  "java_test": [
+   13,
+   1071
+  ],
+  "sql": [
+   2,
+   110
+  ],
+  "tsx_ts_main": [
+   21,
+   1767
+  ],
+  "css": [
+   1,
+   314
+  ],
+  "e2e": [
+   3,
+   233
+  ],
+  "loadtest": [
+   6,
+   421
+  ]
+ },
+ "java": {
+  "functions": 254,
+  "max_ccn": 12,
+  "max_ccn_fn": "PricingService::validateTiers",
+  "ccn_over_10": 2,
+  "avg_ccn": 1.69,
+  "avg_nloc": 6.6
+ },
+ "ts": {
+  "tool": "lizard 1.26.1 -l tsx -l typescript",
+  "functions": 221,
+  "avg_ccn": 2.4,
+  "ccn_over_10": 8,
+  "max_ccn": 50,
+  "max_ccn_fn": "BookingPage"
+ },
+ "duplicate_rate_percent": 3.12
+}

@@ -1,0 +1,474 @@
+{
+ "unit": [
+  {
+   "suite": "AvailabilityCalculatorTest",
+   "name": "TC-AV-05: вільний на кожен день ≠ вільний на весь період (різні екземпляри)",
+   "status": "пройдено",
+   "timeSec": 0.01
+  },
+  {
+   "suite": "AvailabilityCalculatorTest",
+   "name": "TC-AV-02: календар рахує вільні екземпляри по днях (масив різниць)",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "AvailabilityCalculatorTest",
+   "name": "TC-AV-04: порожній набір бронювань — усі екземпляри вільні; порожній період — порожній масив",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "AvailabilityCalculatorTest",
+   "name": "TC-AV-06: підбір екземпляра — best fit за мінімальним простоєм",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "AvailabilityCalculatorTest",
+   "name": "TC-AV-01: перетин напіввідкритих інтервалів — дотик межами не є перетином",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "AvailabilityCalculatorTest",
+   "name": "TC-AV-07: однаковий простій — перемагає перший у стабільному порядку; немає вільних — порожньо",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "AvailabilityCalculatorTest",
+   "name": "TC-AV-03: інтервали, що виходять за межі періоду, обрізаються; неактивні екземпляри ігноруються",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "BookingStatusTest",
+   "name": "TC-ST-03: екземпляр займають лише активні стани",
+   "status": "пройдено",
+   "timeSec": 0.04
+  },
+  {
+   "suite": "BookingStatusTest",
+   "name": "TC-ST-01: дозволені переходи станів",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "BookingStatusTest",
+   "name": "TC-ST-02: заборонені переходи — видане не скасовується, завершені стани кінцеві",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-08: ставка для довшої оренди не може зростати; ступені не повторюються",
+   "status": "пройдено",
+   "timeSec": 0.01
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-01: межі інтервалу включні — одна доба, якщо початок і кінець збігаються",
+   "status": "пройдено",
+   "timeSec": 0.01
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-02: ступінь тарифу обирається за найбільшим minDays ≤ n [1]",
+   "status": "пройдено",
+   "timeSec": 0.02
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-02: ступінь тарифу обирається за найбільшим minDays ≤ n [2]",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-02: ступінь тарифу обирається за найбільшим minDays ≤ n [3]",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-02: ступінь тарифу обирається за найбільшим minDays ≤ n [4]",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-02: ступінь тарифу обирається за найбільшим minDays ≤ n [5]",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-02: ступінь тарифу обирається за найбільшим minDays ≤ n [6]",
+   "status": "пройдено",
+   "timeSec": 0.01
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-04: плата за запізнення = L · r · k, повернення вчасно — 0",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-05: округлення HALF_UP до копійок",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-03: вартість = n · r(n), застава окремо",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-06: сітка без ступеня від 1 доби недопустима",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "PricingServiceTest",
+   "name": "TC-PRICE-07: довша оренда не може коштувати менше за коротшу",
+   "status": "пройдено",
+   "timeSec": 0.01
+  },
+  {
+   "suite": "PasswordPolicyTest",
+   "name": "TC-PWD-01: менше 15 символів — відмова; 15 символів — прийнято",
+   "status": "пройдено",
+   "timeSec": 0.14
+  },
+  {
+   "suite": "PasswordPolicyTest",
+   "name": "TC-PWD-02: довгі паролі до 128 символів підтримуються, без вимог до класів символів",
+   "status": "пройдено",
+   "timeSec": 0.01
+  },
+  {
+   "suite": "PasswordPolicyTest",
+   "name": "TC-PWD-03: поширені й тривіальні значення відхиляються",
+   "status": "пройдено",
+   "timeSec": 0.0
+  }
+ ],
+ "integration": [
+  {
+   "suite": "ApiSecurityIT",
+   "name": "TC-SEC-02: гість не може бронювати — 401 у форматі Problem Details",
+   "status": "пройдено",
+   "timeSec": 0.2
+  },
+  {
+   "suite": "ApiSecurityIT",
+   "name": "TC-SEC-07: відповідь містить X-Request-Id і заголовки безпеки",
+   "status": "пройдено",
+   "timeSec": 0.14
+  },
+  {
+   "suite": "ApiSecurityIT",
+   "name": "TC-SEC-06: конфлікт бронювання — 409 з кодом BOOKING_CONFLICT; помилки полів — 400 з fieldErrors",
+   "status": "пройдено",
+   "timeSec": 0.51
+  },
+  {
+   "suite": "ApiSecurityIT",
+   "name": "TC-SEC-03: змінний запит без CSRF-токена відхиляється (403)",
+   "status": "пройдено",
+   "timeSec": 0.19
+  },
+  {
+   "suite": "ApiSecurityIT",
+   "name": "TC-CAT-01: фільтр категорії, стабільний порядок сторінок і відмова на недопустимі параметри",
+   "status": "пройдено",
+   "timeSec": 0.23
+  },
+  {
+   "suite": "ApiSecurityIT",
+   "name": "TC-SEC-05: підміна ідентифікатора — чуже бронювання повертає 404 і не розкриває даних",
+   "status": "пройдено",
+   "timeSec": 0.39
+  },
+  {
+   "suite": "ApiSecurityIT",
+   "name": "TC-SEC-04: клієнт не має доступу до маршрутів менеджера (403)",
+   "status": "пройдено",
+   "timeSec": 0.35
+  },
+  {
+   "suite": "ApiSecurityIT",
+   "name": "TC-AUTH-02: короткий пароль — 400; повторна адреса — 409; 5 невдалих входів — блокування 429",
+   "status": "пройдено",
+   "timeSec": 1.03
+  },
+  {
+   "suite": "ApiSecurityIT",
+   "name": "TC-SEC-01: каталог і календар доступні гостю",
+   "status": "пройдено",
+   "timeSec": 0.08
+  },
+  {
+   "suite": "AuthFlowIT",
+   "name": "TC-AUTH-01: реєстрація → вхід із CSRF-cookie → сесія → /me → вихід; роль із запиту ігнорується",
+   "status": "пройдено",
+   "timeSec": 0.85
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-BOOK-09: дотримано інваріант — у БД немає перетинів активних бронювань одного екземпляра",
+   "status": "пройдено",
+   "timeSec": 0.55
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-BOOK-07: скасування звільняє екземпляр; клієнт не скасовує в день початку",
+   "status": "пройдено",
+   "timeSec": 0.41
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-BOOK-08: продовження перераховує вартість; конфлікт із наступним бронюванням — 409",
+   "status": "пройдено",
+   "timeSec": 0.4
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-BOOK-02: коли всі екземпляри зайняті — 409 і новий запис не створюється",
+   "status": "пройдено",
+   "timeSec": 0.34
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-BOOK-05: некоректні періоди — кінець раніше початку, минула дата, перевищення ліміту",
+   "status": "пройдено",
+   "timeSec": 0.29
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-FLOW-02: відхилення можливе лише для заявки, що очікує; причина зберігається",
+   "status": "пройдено",
+   "timeSec": 0.33
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-AV-08: календар з реальної БД враховує перерву та екземпляри в ремонті",
+   "status": "пройдено",
+   "timeSec": 0.45
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-FLOW-01: повний процес — підтвердження, видача, повернення із запізненням",
+   "status": "пройдено",
+   "timeSec": 0.53
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-BOOK-01: створення бронювання фіксує ціну, екземпляр і подію CREATED",
+   "status": "пройдено",
+   "timeSec": 0.47
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-BOOK-06: менеджер не створює бронювання від свого імені",
+   "status": "пройдено",
+   "timeSec": 0.33
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-ACCESS-02: чуже бронювання недоступне клієнту (404), менеджеру — доступне",
+   "status": "пройдено",
+   "timeSec": 0.34
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-BOOK-03: технічна перерва блокує екземпляр після оренди, після неї — вільно",
+   "status": "пройдено",
+   "timeSec": 0.38
+  },
+  {
+   "suite": "BookingServiceIT",
+   "name": "TC-BOOK-04: часткове накладання та вкладений інтервал на одному екземплярі відхиляються",
+   "status": "пройдено",
+   "timeSec": 0.38
+  },
+  {
+   "suite": "ConcurrencyIT",
+   "name": "TC-CONC-03: обмеження EXCLUDE відхиляє перетин навіть в обхід прикладного коду (SQLSTATE 23P01)",
+   "status": "пройдено",
+   "timeSec": 1.32
+  },
+  {
+   "suite": "ConcurrencyIT",
+   "name": "TC-CONC-01: 10 одночасних запитів на єдиний екземпляр — рівно 1 бронювання, 9 конфліктів",
+   "status": "пройдено",
+   "timeSec": 1.13
+  },
+  {
+   "suite": "ConcurrencyIT",
+   "name": "TC-CONC-02: 12 одночасних запитів на 3 екземпляри — рівно 3 бронювання на різних екземплярах",
+   "status": "пройдено",
+   "timeSec": 1.28
+  },
+  {
+   "suite": "DemoDataSeederIT",
+   "name": "TC-SEED-01: наповнення порожньої бази, повторний запуск нічого не дублює, інваріант дотримано",
+   "status": "пройдено",
+   "timeSec": 0.65
+  },
+  {
+   "suite": "ReportServiceIT",
+   "name": "TC-REP-02: період обрізає оренду; некоректний період відхиляється",
+   "status": "пройдено",
+   "timeSec": 0.25
+  },
+  {
+   "suite": "ReportServiceIT",
+   "name": "TC-REP-01: завантаженість U = O / (N·D) і дохід за повернені оренди",
+   "status": "пройдено",
+   "timeSec": 0.27
+  }
+ ],
+ "vitest": [
+  {
+   "suite": "dates.test.ts",
+   "name": "TC-FE-01: додавання днів через межу місяця, року та переходу на літній час",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "dates.test.ts",
+   "name": "TC-FE-02: тривалість оренди рахується з включними межами",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "dates.test.ts",
+   "name": "TC-FE-03: перевірка формату дати відхиляє неіснуючі дні",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "dates.test.ts",
+   "name": "TC-FE-04: межі місяців і день тижня з понеділка",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "dates.test.ts",
+   "name": "TC-FE-05: «сьогодні» визначається за Києвом, а не за UTC",
+   "status": "пройдено",
+   "timeSec": 0.0
+  },
+  {
+   "suite": "dates.test.ts",
+   "name": "TC-FE-06: відмінювання слова «доба»",
+   "status": "пройдено",
+   "timeSec": 0.0
+  }
+ ],
+ "e2e": [
+  {
+   "suite": "booking.spec.ts",
+   "name": "TC-E2E-01: клієнт обирає дати, бачить розрахунок, надсилає заявку; результат зберігається після оновлення",
+   "status": "пройдено",
+   "timeSec": 4.62
+  },
+  {
+   "suite": "booking.spec.ts",
+   "name": "TC-E2E-02: вибір періоду кліками в календарі та клавіатурою",
+   "status": "пройдено",
+   "timeSec": 1.54
+  },
+  {
+   "suite": "booking.spec.ts",
+   "name": "TC-E2E-03: період із повністю зайнятим днем — пояснення і заблокована кнопка",
+   "status": "пройдено",
+   "timeSec": 1.82
+  },
+  {
+   "suite": "booking.spec.ts",
+   "name": "TC-E2E-04: дата завершення раніше початку — попередження без запиту на сервер",
+   "status": "пройдено",
+   "timeSec": 1.08
+  },
+  {
+   "suite": "booking.spec.ts",
+   "name": "TC-E2E-05: менеджер підтверджує заявку, клієнт бачить новий стан",
+   "status": "пройдено",
+   "timeSec": 4.29
+  },
+  {
+   "suite": "booking.spec.ts",
+   "name": "TC-E2E-06: відхилення потребує причини, клієнт бачить її",
+   "status": "пройдено",
+   "timeSec": 1.47
+  },
+  {
+   "suite": "booking.spec.ts",
+   "name": "TC-E2E-07: клієнт не відкриває сторінки менеджера; чуже бронювання — «не знайдено»",
+   "status": "пройдено",
+   "timeSec": 1.24
+  },
+  {
+   "suite": "booking.spec.ts",
+   "name": "TC-E2E-08: менеджер бачить часову діаграму екземплярів і звіт завантаженості",
+   "status": "пройдено",
+   "timeSec": 1.77
+  },
+  {
+   "suite": "booking.spec.ts",
+   "name": "TC-E2E-09: неправильний пароль — повідомлення без входу",
+   "status": "пройдено",
+   "timeSec": 0.67
+  },
+  {
+   "suite": "quality.spec.ts",
+   "name": "TC-A11Y-01: сторінки клієнта без порушень WCAG A/AA за даними axe",
+   "status": "пройдено",
+   "timeSec": 4.91
+  },
+  {
+   "suite": "quality.spec.ts",
+   "name": "TC-A11Y-02: сторінки менеджера без порушень WCAG A/AA за даними axe",
+   "status": "пройдено",
+   "timeSec": 4.05
+  },
+  {
+   "suite": "quality.spec.ts",
+   "name": "TC-RESP-360: без горизонтальної прокрутки сторінки на ширині 360 px",
+   "status": "пройдено",
+   "timeSec": 1.29
+  },
+  {
+   "suite": "quality.spec.ts",
+   "name": "TC-RESP-768: без горизонтальної прокрутки сторінки на ширині 768 px",
+   "status": "пройдено",
+   "timeSec": 1.5
+  },
+  {
+   "suite": "quality.spec.ts",
+   "name": "TC-RESP-1280: без горизонтальної прокрутки сторінки на ширині 1280 px",
+   "status": "пройдено",
+   "timeSec": 1.5
+  },
+  {
+   "suite": "quality.spec.ts",
+   "name": "TC-A11Y-03: календар і заявка лише з клавіатури",
+   "status": "пройдено",
+   "timeSec": 1.51
+  }
+ ],
+ "e2eStats": {
+  "startTime": "2026-11-22T19:50:17.481Z",
+  "duration": 34580.861,
+  "expected": 15,
+  "skipped": 0,
+  "unexpected": 0,
+  "flaky": 0
+ }
+}

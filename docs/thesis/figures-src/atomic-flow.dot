@@ -1,0 +1,20 @@
+digraph G {
+  graph [fontname="Liberation Serif", nodesep=0.45, ranksep=0.3, pad=0.15];
+  node  [fontname="Liberation Serif", fontsize=14, shape=box, style="rounded,filled", fillcolor=white, penwidth=1.3, margin="0.14,0.06"];
+  edge  [fontname="Liberation Serif", fontsize=13, penwidth=1.1, arrowsize=0.7];
+  start [label="Початок", fillcolor="#eeeeee"];
+  tx    [label="BEGIN; SELECT … FOR UPDATE\nусіх робочих екземплярів типу"];
+  read  [label="Прочитати активні інтервали\nекземплярів у вікні ±60 діб"];
+  pick  [label="Обрати екземпляр без перетину\nз мінімальним простоєм (2.11)"];
+  found [label="Екземпляр\nзнайдено?", shape=diamond, margin="0.02,0.02"];
+  ins   [label="INSERT бронювання\nта події CREATED"];
+  db    [label="Обмеження\nEXCLUDE\nвиконано?", shape=diamond, margin="0.02,0.02"];
+  ok    [label="COMMIT;\nрезультат 201"];
+  rb    [label="ROLLBACK;\nрезультат 409", style=filled, fillcolor="#f5f5f5", shape=box];
+  end   [label="Кінець", fillcolor="#eeeeee"];
+  start -> tx -> read -> pick -> found;
+  found -> rb [label="Ні"]; found -> ins [label="Так"];
+  ins -> db; db -> ok [label="Так"]; db -> rb [label="Ні (23P01)"];
+  ok -> end; rb -> end;
+  {rank=same; found; rb}
+}

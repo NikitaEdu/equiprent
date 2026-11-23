@@ -1,0 +1,38 @@
+{
+  "catalog": {
+    "url": "http://localhost:8080/",
+    "violations": [],
+    "passes": 27,
+    "incomplete": 0
+  },
+  "equipment": {
+    "url": "http://localhost:8080/equipment/1",
+    "violations": [],
+    "passes": 31,
+    "incomplete": 2
+  },
+  "login": {
+    "url": "http://localhost:8080/login",
+    "violations": [],
+    "passes": 24,
+    "incomplete": 0
+  },
+  "my-bookings": {
+    "url": "http://localhost:8080/my",
+    "violations": [],
+    "passes": 20,
+    "incomplete": 0
+  },
+  "manager-bookings": {
+    "url": "http://localhost:8080/manager?status=ALL",
+    "violations": [],
+    "passes": 28,
+    "incomplete": 0
+  },
+  "manager-equipment": {
+    "url": "http://localhost:8080/manager/equipment?id=1",
+    "violations": [],
+    "passes": 31,
+    "incomplete": 2
+  }
+}

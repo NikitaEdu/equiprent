@@ -1,0 +1,24 @@
+digraph G {
+  graph [fontname="Liberation Serif", pad=0.1, nodesep=0.25, ranksep=0.35, rankdir=TB];
+  node [shape=plain, fontname="Liberation Serif", fontsize=12, margin=0];
+  edge [fontname="Liberation Serif", fontsize=11, arrowsize=0.7, penwidth=1];
+  ctl [label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="3"><tr><td><b>BookingController</b></td></tr><hr/><tr><td align="left" width="10">+create(user, req)&#160;&#160;<br align="left"/>+cancel(user, id)&#160;&#160;<br align="left"/>+extend(user, id, req)&#160;&#160;<br align="left"/></td></tr></table>>];
+  svc [label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="3"><tr><td><b>BookingService</b></td></tr><hr/><tr><td align="left" width="10">+create(user, req): BookingResponse<br align="left"/>+confirm(), reject(), issue()&#160;&#160;<br align="left"/>+returnUnit(), extend(), cancel()&#160;&#160;<br align="left"/></td></tr></table>>];
+  price [label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="3"><tr><td><b>PricingService</b></td></tr><hr/><tr><td align="left" width="10">+quote(tiers, start, end, deposit)&#160;&#160;<br align="left"/>+lateFee(...)&#160;&#160;<br align="left"/>+validateTiers(tiers)&#160;&#160;<br align="left"/></td></tr></table>>];
+  avs [label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="3"><tr><td><b>AvailabilityService</b></td></tr><hr/><tr><td align="left" width="10">+calendar(typeId, from, to)&#160;&#160;<br align="left"/>+quote(typeId, start, end)&#160;&#160;<br align="left"/></td></tr></table>>];
+  calc [label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="3"><tr><td>«utility»<br/><b>AvailabilityCalculator</b></td></tr><hr/><tr><td align="left" width="10">+dailyFree(...): int[]<br align="left"/>+chooseUnit(...): Optional&lt;Long&gt;&#160;&#160;<br align="left"/></td></tr></table>>];
+  urepo [label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="3"><tr><td>«interface»<br/><b>EquipmentUnitRepository</b></td></tr><hr/><tr><td align="left" width="10">+lockAvailableByType(typeId)&#160;&#160;<br align="left"/></td></tr></table>>];
+  brepo [label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="3"><tr><td>«interface»<br/><b>BookingRepository</b></td></tr><hr/><tr><td align="left" width="10">+findBlocked(typeId, from, to)&#160;&#160;<br align="left"/>+existsOverlapOnUnit(...)&#160;&#160;<br align="left"/></td></tr></table>>];
+  bk [label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="3"><tr><td><b>Booking</b></td></tr><hr/><tr><td align="left" width="10">-startDate, endDate<br align="left"/>-status: BookingStatus&#160;&#160;<br align="left"/></td></tr><hr/><tr><td align="left" width="10">~transition(target, actor)&#160;&#160;<br align="left"/>~extend(newEnd, quote)&#160;&#160;<br align="left"/></td></tr></table>>];
+  st [label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="3"><tr><td>«enumeration»<br/><b>BookingStatus</b></td></tr><hr/><tr><td align="left" width="10">PENDING, CONFIRMED, ISSUED,<br align="left"/>RETURNED, CANCELLED, REJECTED&#160;&#160;<br align="left"/></td></tr><hr/><tr><td align="left" width="10">+canTransitionTo(t): boolean&#160;&#160;<br align="left"/></td></tr></table>>];
+  ctl -> svc;
+  svc -> price; svc -> avs; svc -> urepo; svc -> brepo;
+  svc -> calc [style=dashed];
+  avs -> calc [style=dashed];
+  brepo -> bk [style=dashed];
+  bk -> st;
+  {rank=same; price; urepo}
+  {rank=same; avs; brepo}
+  {rank=same; calc; bk}
+  price -> avs [style=invis]; urepo -> brepo [style=invis];
+}

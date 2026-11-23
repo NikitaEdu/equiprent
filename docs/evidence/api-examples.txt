@@ -1,0 +1,23 @@
+### POST /api/bookings
+{"equipmentTypeId":5,"startDate":"2027-01-11","endDate":"2027-01-14","comment":"Заберу після 16:00"}
+--- відповідь
+HTTP/1.1 201 
+X-Request-Id: f675a52b-4b1c-4924-a178-3433dc7cdb9c
+Content-Type: application/json
+{"id":20,"number":"BR-000020","equipmentTypeId":5,"equipmentName":"Портативна акустична система 500 Вт","inventoryNumber":"EQ-05-001","startDate":"2027-01-11","endDate":"2027-01-14","rentalDays":4,"bufferDays":0,"status":"PENDING","dailyRate":480.00,"rentalCost":1920.00,"deposit":5000.00,"lateFee":0,"comment":"Заберу після 16:00","createdAt":"2026-11-22T19:28:18.649022427Z","version":0,"events":[{"type":"CREATED","toStatus":"PENDING","actor":"Тарас Орендар","occurredAt":"2026-11-22T19:28:18.649022427Z"}]}
+
+### POST /api/bookings (ті самі дати, вільних екземплярів немає)
+--- відповідь
+HTTP/1.1 409 
+Content-Type: application/problem+json
+{"detail":"На обрані дати вільних екземплярів немає. Оновіть календар і оберіть інші дати","instance":"/api/bookings","status":409,"title":"Conflict","type":"urn:equiprent:problem:booking-conflict","code":"BOOKING_CONFLICT"}
+
+### POST /api/bookings (кінець раніше початку)
+--- відповідь
+HTTP/1.1 400 
+{"detail":"Дата завершення не може бути раніше дати початку","instance":"/api/bookings","status":400,"title":"Bad Request","type":"urn:equiprent:problem:period-order","code":"PERIOD_ORDER"}
+
+### POST /api/bookings (без обов’язкових полів)
+--- відповідь
+HTTP/1.1 400 
+{"detail":"Перевірте правильність заповнення полів","instance":"/api/bookings","status":400,"title":"Bad Request","type":"urn:equiprent:problem:validation-failed","code":"VALIDATION_FAILED","fieldErrors":[{"field":"startDate","message":"Вкажіть дату початку"},{"field":"endDate","message":"Вкажіть дату завершення"},{"field":"equipmentTypeId","message":"Оберіть обладнання"}]}

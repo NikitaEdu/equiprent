@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: ${TEST_DB_URL:jdbc:postgresql://localhost:5432/rental_test}
+    username: ${TEST_DB_USER:rental}
+    password: ${TEST_DB_PASSWORD:rental_dev_password}
+    hikari:
+      maximum-pool-size: 20
+  main:
+    allow-bean-definition-overriding: true
+
+app:
+  seed-demo-data: false

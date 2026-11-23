@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="800" viewBox="0 0 1000 800" font-family="Liberation Serif, Times New Roman, serif">
+<rect width="100%" height="100%" fill="white"/>
+<defs><marker id="tri" viewBox="0 0 20 20" refX="19" refY="10" markerWidth="18" markerHeight="18" orient="auto"><path d="M0,0 L20,10 L0,20 z" fill="white" stroke="black" stroke-width="1.5"/></marker></defs>
+<rect x="230" y="20" width="540" height="760" fill="none" stroke="black" stroke-width="2.5"/>
+<text x="500" y="56" font-size="26" font-weight="bold" text-anchor="middle">Вебсистема EquipRent</text>
+<ellipse cx="500" cy="112" rx="178" ry="40" fill="white" stroke="black" stroke-width="2"/>
+<text x="500" y="121" font-size="24" text-anchor="middle">Переглянути каталог</text>
+<ellipse cx="500" cy="200" rx="178" ry="40" fill="white" stroke="black" stroke-width="2"/>
+<text x="500" y="196" font-size="24" text-anchor="middle">Переглянути календар</text>
+<text x="500" y="222" font-size="24" text-anchor="middle">і розрахунок вартості</text>
+<ellipse cx="500" cy="288" rx="178" ry="40" fill="white" stroke="black" stroke-width="2"/>
+<text x="500" y="297" font-size="24" text-anchor="middle">Надіслати заявку</text>
+<ellipse cx="500" cy="376" rx="178" ry="40" fill="white" stroke="black" stroke-width="2"/>
+<text x="500" y="372" font-size="24" text-anchor="middle">Скасувати або</text>
+<text x="500" y="398" font-size="24" text-anchor="middle">продовжити бронювання</text>
+<ellipse cx="500" cy="464" rx="200" ry="40" fill="white" stroke="black" stroke-width="2"/>
+<text x="500" y="460" font-size="24" text-anchor="middle">Обробити заявку: підтвердити</text>
+<text x="500" y="486" font-size="24" text-anchor="middle">або відхилити</text>
+<ellipse cx="500" cy="552" rx="178" ry="40" fill="white" stroke="black" stroke-width="2"/>
+<text x="500" y="548" font-size="24" text-anchor="middle">Зафіксувати видачу</text>
+<text x="500" y="574" font-size="24" text-anchor="middle">і повернення</text>
+<ellipse cx="500" cy="640" rx="178" ry="40" fill="white" stroke="black" stroke-width="2"/>
+<text x="500" y="636" font-size="24" text-anchor="middle">Керувати обладнанням</text>
+<text x="500" y="662" font-size="24" text-anchor="middle">й екземплярами</text>
+<ellipse cx="500" cy="730" rx="178" ry="32" fill="white" stroke="black" stroke-width="2"/>
+<text x="500" y="739" font-size="24" text-anchor="middle">Переглянути звіт</text>
+<circle cx="110" cy="90" r="16" fill="white" stroke="black" stroke-width="2.5"/>
+<line x1="110" y1="106" x2="110" y2="152" stroke="black" stroke-width="2.5"/>
+<line x1="84" y1="122" x2="136" y2="122" stroke="black" stroke-width="2.5"/>
+<line x1="110" y1="152" x2="88" y2="186" stroke="black" stroke-width="2.5"/>
+<line x1="110" y1="152" x2="132" y2="186" stroke="black" stroke-width="2.5"/>
+<text x="110" y="218" font-size="26" text-anchor="middle">Гість</text>
+<circle cx="110" cy="380" r="16" fill="white" stroke="black" stroke-width="2.5"/>
+<line x1="110" y1="396" x2="110" y2="442" stroke="black" stroke-width="2.5"/>
+<line x1="84" y1="412" x2="136" y2="412" stroke="black" stroke-width="2.5"/>
+<line x1="110" y1="442" x2="88" y2="476" stroke="black" stroke-width="2.5"/>
+<line x1="110" y1="442" x2="132" y2="476" stroke="black" stroke-width="2.5"/>
+<text x="110" y="508" font-size="26" text-anchor="middle">Клієнт</text>
+<circle cx="890" cy="430" r="16" fill="white" stroke="black" stroke-width="2.5"/>
+<line x1="890" y1="446" x2="890" y2="492" stroke="black" stroke-width="2.5"/>
+<line x1="864" y1="462" x2="916" y2="462" stroke="black" stroke-width="2.5"/>
+<line x1="890" y1="492" x2="868" y2="526" stroke="black" stroke-width="2.5"/>
+<line x1="890" y1="492" x2="912" y2="526" stroke="black" stroke-width="2.5"/>
+<text x="890" y="558" font-size="26" text-anchor="middle">Менеджер</text>
+<line x1="110" y1="362" x2="110" y2="236" stroke="black" stroke-width="2" marker-end="url(#tri)"/>
+<line x1="140" y1="130" x2="322" y2="112" stroke="black" stroke-width="1.8"/>
+<line x1="140" y1="130" x2="322" y2="200" stroke="black" stroke-width="1.8"/>
+<line x1="140" y1="420" x2="322" y2="288" stroke="black" stroke-width="1.8"/>
+<line x1="140" y1="420" x2="322" y2="376" stroke="black" stroke-width="1.8"/>
+<line x1="860" y1="470" x2="700" y2="464" stroke="black" stroke-width="1.8"/>
+<line x1="860" y1="470" x2="678" y2="552" stroke="black" stroke-width="1.8"/>
+<line x1="860" y1="470" x2="678" y2="640" stroke="black" stroke-width="1.8"/>
+<line x1="860" y1="470" x2="678" y2="730" stroke="black" stroke-width="1.8"/>
+</svg>

@@ -1,0 +1,126 @@
+{
+  "scenario": "read-catalog-availability",
+  "startedAt": "2026-11-22T18:29:01.974Z",
+  "environment": {
+    "os": "Linux 6.18.44-fc-v726",
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "cores": 2,
+    "memoryGb": 8,
+    "node": "v22.23.5",
+    "java": "OpenJDK 21.0.13 (2026-10-24)",
+    "postgres": "psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)",
+    "note": "Генератор навантаження, застосунок і СКБД працюють на одному вузлі (навчальний стенд)"
+  },
+  "config": {
+    "durationSec": 180,
+    "warmupSec": 60,
+    "levels": [
+      5,
+      10,
+      25
+    ],
+    "thinkTimeMs": 0,
+    "thresholds": {
+      "p95Ms": 800,
+      "errorRate": 0.01
+    },
+    "dataset": {
+      "equipmentTypes": 16
+    }
+  },
+  "results": [
+    {
+      "durationSec": 180.04,
+      "connections": 5,
+      "requests": 239334,
+      "rpsAvg": 1330,
+      "throughputKBps": 2356,
+      "latencyMs": {
+        "p50": 814,
+        "p90": 1548,
+        "p97_5": 1695,
+        "p99": 1752,
+        "avg": 859.6,
+        "max": 1890
+      },
+      "errors": 0,
+      "timeouts": 0,
+      "non2xx": 0,
+      "statusCodes": {
+        "200": 239334
+      },
+      "server": {
+        "samples": 180,
+        "cpuAvgPercent": 84,
+        "cpuMaxPercent": 95.2,
+        "rssAvgMb": 482,
+        "rssMaxMb": 483
+      },
+      "technicalErrorRate": 0,
+      "p95Note": "autocannon не обчислює p95 напряму; порогом слугує p97.5 як суворіша оцінка",
+      "thresholdsPassed": false
+    },
+    {
+      "durationSec": 180.05,
+      "connections": 10,
+      "requests": 265900,
+      "rpsAvg": 1477,
+      "throughputKBps": 2620,
+      "latencyMs": {
+        "p50": 876,
+        "p90": 1620,
+        "p97_5": 1744,
+        "p99": 1801,
+        "avg": 884.4,
+        "max": 2001
+      },
+      "errors": 0,
+      "timeouts": 0,
+      "non2xx": 0,
+      "statusCodes": {
+        "200": 265900
+      },
+      "server": {
+        "samples": 180,
+        "cpuAvgPercent": 102,
+        "cpuMaxPercent": 107,
+        "rssAvgMb": 484,
+        "rssMaxMb": 484
+      },
+      "technicalErrorRate": 0,
+      "p95Note": "autocannon не обчислює p95 напряму; порогом слугує p97.5 як суворіша оцінка",
+      "thresholdsPassed": false
+    },
+    {
+      "durationSec": 180.05,
+      "connections": 25,
+      "requests": 265476,
+      "rpsAvg": 1475,
+      "throughputKBps": 2614,
+      "latencyMs": {
+        "p50": 879,
+        "p90": 1551,
+        "p97_5": 1706,
+        "p99": 1785,
+        "avg": 883,
+        "max": 2053
+      },
+      "errors": 0,
+      "timeouts": 0,
+      "non2xx": 0,
+      "statusCodes": {
+        "200": 265476
+      },
+      "server": {
+        "samples": 180,
+        "cpuAvgPercent": 110,
+        "cpuMaxPercent": 113,
+        "rssAvgMb": 486,
+        "rssMaxMb": 487
+      },
+      "technicalErrorRate": 0,
+      "p95Note": "autocannon не обчислює p95 напряму; порогом слугує p97.5 як суворіша оцінка",
+      "thresholdsPassed": false
+    }
+  ]
+}

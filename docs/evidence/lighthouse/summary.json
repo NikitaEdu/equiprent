@@ -1,0 +1,78 @@
+{
+  "before/catalog": {
+    "performance": 86,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "fcpMs": 934,
+    "lcpMs": 1032,
+    "cls": 0.175,
+    "tbtMs": 67,
+    "perfScores": [
+      87,
+      80,
+      85,
+      86,
+      86
+    ],
+    "lighthouse": "13.6.0",
+    "formFactor": "mobile",
+    "throttling": "simulate"
+  },
+  "before/equipment": {
+    "performance": 77,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "fcpMs": 948,
+    "lcpMs": 4180,
+    "cls": 0.182,
+    "tbtMs": 124,
+    "perfScores": [
+      81,
+      77,
+      56,
+      69,
+      77
+    ],
+    "lighthouse": "13.6.0",
+    "formFactor": "mobile",
+    "throttling": "simulate"
+  },
+  "after/catalog": {
+    "performance": 91,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "fcpMs": 822,
+    "lcpMs": 822,
+    "cls": 0.113,
+    "tbtMs": 256,
+    "perfScores": [
+      95,
+      91,
+      94,
+      91,
+      85
+    ],
+    "lighthouse": "13.6.0",
+    "formFactor": "mobile",
+    "throttling": "simulate"
+  },
+  "after/equipment": {
+    "performance": 82,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "fcpMs": 827,
+    "lcpMs": 2623,
+    "cls": 0.017,
+    "tbtMs": 572,
+    "perfScores": [
+      93,
+      79,
+      87,
+      82,
+      80
+    ],
+    "lighthouse": "13.6.0",
+    "formFactor": "mobile",
+    "throttling": "simulate"
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "environment": {
+    "os": "Linux 6.18.44-fc-v726",
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "cores": 2,
+    "memoryGb": 8,
+    "node": "v22.23.5",
+    "java": "OpenJDK 21.0.13 (2026-10-24)",
+    "postgres": "psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)",
+    "note": "Генератор навантаження, застосунок і СКБД працюють на одному вузлі (навчальний стенд)"
+  },
+  "runs": [
+    {
+      "label": "baseline",
+      "requestedBookings": 100,
+      "insertedBookings": 100,
+      "totalBookingsInDb": 112,
+      "busiestTypeId": "1",
+      "period": {
+        "from": "2026-12-01",
+        "to": "2026-12-31"
+      },
+      "repeatsPerOperation": 30,
+      "operations": {
+        "catalogPage": {
+          "medianMs": 17,
+          "p95Ms": 25.1,
+          "minMs": 9.2
+        },
+        "catalogSearch": {
+          "medianMs": 12.4,
+          "p95Ms": 19.3,
+          "minMs": 9.2
+        },
+        "availabilityMonth": {
+          "medianMs": 10.4,
+          "p95Ms": 13.9,
+          "minMs": 6
+        },
+        "quote": {
+          "medianMs": 7.5,
+          "p95Ms": 14.6,
+          "minMs": 6.4
+        },
+        "managerListPending": {
+          "medianMs": 10.6,
+          "p95Ms": 16.1,
+          "minMs": 6.5
+        },
+        "managerListAll": {
+          "medianMs": 10.1,
+          "p95Ms": 26.6,
+          "minMs": 7
+        },
+        "managerSearchClient": {
+          "medianMs": 8.6,
+          "p95Ms": 13.1,
+          "minMs": 5.1
+        },
+        "clientMyBookings": {
+          "medianMs": 6.5,
+          "p95Ms": 10.1,
+          "minMs": 4.7
+        },
+        "utilizationReport30d": {
+          "medianMs": 4.7,
+          "p95Ms": 10.9,
+          "minMs": 3.2
+        }
+      },
+      "correctness": {
+        "calendarMatchesSql": true,
+        "paginationStable": true,
+        "managerTotalMatchesDb": true
+      },
+      "plans": {
+        "availability": {
+          "executionMs": 0.031,
+          "nodes": [
+            "Seq Scan"
+          ]
+        },
+        "managerPending": {
+          "executionMs": 0.145,
+          "nodes": [
+            "Limit",
+            "Sort",
+            "Hash Join",
+            "Seq Scan",
+            "Hash",
+            "Seq Scan"
+          ]
+        }
+      }
+    },
+    {
+      "label": "baseline",
+      "requestedBookings": 1000,
+      "insertedBookings": 1000,
+      "totalBookingsInDb": 1012,
+      "busiestTypeId": "22",
+      "period": {
+        "from": "2026-12-01",
+        "to": "2026-12-31"
+      },
+      "repeatsPerOperation": 30,
+      "operations": {
+        "catalogPage": {
+          "medianMs": 17.9,
+          "p95Ms": 30.5,
+          "minMs": 13.2
+        },
+        "catalogSearch": {
+          "medianMs": 19.5,
+          "p95Ms": 26.7,
+          "minMs": 13.2
+        },
+        "availabilityMonth": {
+          "medianMs": 9.9,
+          "p95Ms": 13.7,
+          "minMs": 5.5
+        },
+        "quote": {
+          "medianMs": 11.7,
+          "p95Ms": 16,
+          "minMs": 7.9
+        },
+        "managerListPending": {
+          "medianMs": 13.6,
+          "p95Ms": 21.9,
+          "minMs": 8.2
+        },
+        "managerListAll": {
+          "medianMs": 10.8,
+          "p95Ms": 13.3,
+          "minMs": 7.6
+        },
+        "managerSearchClient": {
+          "medianMs": 9.2,
+          "p95Ms": 17.8,
+          "minMs": 6.6
+        },
+        "clientMyBookings": {
+          "medianMs": 4.5,
+          "p95Ms": 8.1,
+          "minMs": 4.1
+        },
+        "utilizationReport30d": {
+          "medianMs": 4.5,
+          "p95Ms": 10,
+          "minMs": 3.9
+        }
+      },
+      "correctness": {
+        "calendarMatchesSql": true,
+        "paginationStable": true,
+        "managerTotalMatchesDb": true
+      },
+      "plans": {
+        "availability": {
+          "executionMs": 0.021,
+          "nodes": [
+            "Index Scan(ix_booking_type)"
+          ]
+        },
+        "managerPending": {
+          "executionMs": 0.145,
+          "nodes": [
+            "Limit",
+            "Sort",
+            "Hash Join",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan(ix_booking_status_start)",
+            "Hash",
+            "Seq Scan"
+          ]
+        }
+      }
+    },
+    {
+      "label": "baseline",
+      "requestedBookings": 10000,
+      "insertedBookings": 9681,
+      "totalBookingsInDb": 9693,
+      "busiestTypeId": "39",
+      "period": {
+        "from": "2026-12-01",
+        "to": "2026-12-31"
+      },
+      "repeatsPerOperation": 30,
+      "operations": {
+        "catalogPage": {
+          "medianMs": 15.3,
+          "p95Ms": 28.4,
+          "minMs": 11
+        },
+        "catalogSearch": {
+          "medianMs": 16.7,
+          "p95Ms": 22.7,
+          "minMs": 9.5
+        },
+        "availabilityMonth": {
+          "medianMs": 9.8,
+          "p95Ms": 17.3,
+          "minMs": 6.5
+        },
+        "quote": {
+          "medianMs": 10.2,
+          "p95Ms": 17.4,
+          "minMs": 7.3
+        },
+        "managerListPending": {
+          "medianMs": 15.6,
+          "p95Ms": 23.7,
+          "minMs": 8.5
+        },
+        "managerListAll": {
+          "medianMs": 23.4,
+          "p95Ms": 29.6,
+          "minMs": 19.5
+        },
+        "managerSearchClient": {
+          "medianMs": 12.8,
+          "p95Ms": 23,
+          "minMs": 9.5
+        },
+        "clientMyBookings": {
+          "medianMs": 8.1,
+          "p95Ms": 12.2,
+          "minMs": 4.6
+        },
+        "utilizationReport30d": {
+          "medianMs": 7.8,
+          "p95Ms": 12.1,
+          "minMs": 5.5
+        }
+      },
+      "correctness": {
+        "calendarMatchesSql": true,
+        "paginationStable": true,
+        "managerTotalMatchesDb": true
+      },
+      "plans": {
+        "availability": {
+          "executionMs": 0.071,
+          "nodes": [
+            "Index Scan(ix_booking_type)"
+          ]
+        },
+        "managerPending": {
+          "executionMs": 1.075,
+          "nodes": [
+            "Limit",
+            "Sort",
+            "Hash Join",
+            "Bitmap Heap Scan",
+            "Bitmap Index Scan(ix_booking_status_start)",
+            "Hash",
+            "Seq Scan"
+          ]
+        }
+      }
+    },
+    {
+      "label": "optimized",
+      "requestedBookings": 10000,
+      "insertedBookings": 9681,
+      "totalBookingsInDb": 9693,
+      "busiestTypeId": "39",
+      "period": {
+        "from": "2026-12-01",
+        "to": "2026-12-31"
+      },
+      "repeatsPerOperation": 30,
+      "operations": {
+        "catalogPage": {
+          "medianMs": 19.1,
+          "p95Ms": 26,
+          "minMs": 9.5
+        },
+        "catalogSearch": {
+          "medianMs": 17.6,
+          "p95Ms": 22.6,
+          "minMs": 10.4
+        },
+        "availabilityMonth": {
+          "medianMs": 8.9,
+          "p95Ms": 12.9,
+          "minMs": 5.8
+        },
+        "quote": {
+          "medianMs": 9.1,
+          "p95Ms": 15,
+          "minMs": 6.9
+        },
+        "managerListPending": {
+          "medianMs": 13.4,
+          "p95Ms": 18,
+          "minMs": 9.3
+        },
+        "managerListAll": {
+          "medianMs": 10.3,
+          "p95Ms": 15.6,
+          "minMs": 6.8
+        },
+        "managerSearchClient": {
+          "medianMs": 10,
+          "p95Ms": 14.4,
+          "minMs": 8.3
+        },
+        "clientMyBookings": {
+          "medianMs": 7.3,
+          "p95Ms": 12.9,
+          "minMs": 4.7
+        },
+        "utilizationReport30d": {
+          "medianMs": 5.5,
+          "p95Ms": 9.4,
+          "minMs": 5.1
+        }
+      },
+      "correctness": {
+        "calendarMatchesSql": true,
+        "paginationStable": true,
+        "managerTotalMatchesDb": true
+      },
+      "plans": {
+        "availability": {
+          "executionMs": 0.085,
+          "nodes": [
+            "Index Scan(ix_booking_type)"
+          ]
+        },
+        "managerPending": {
+          "executionMs": 0.065,
+          "nodes": [
+            "Limit",
+            "Nested Loop",
+            "Index Scan(ix_booking_status_created)",
+            "Memoize",
+            "Index Only Scan(app_user_pkey)"
+          ]
+        }
+      }
+    }
+  ]
+}

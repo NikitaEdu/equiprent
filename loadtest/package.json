@@ -1,0 +1,13 @@
+{
+  "name": "equiprent-loadtest",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "read": "node read-scenario.mjs",
+    "write": "node write-scenario.mjs",
+    "volume": "node volume.mjs"
+  },
+  "dependencies": {
+    "pg": "^8.23.1"
+  }
+}

@@ -1,0 +1,19 @@
+digraph ER { graph [fontname="Liberation Serif", rankdir=TB, nodesep=0.35, ranksep=0.4, pad=0.15];
+node [shape=plain, fontname="Liberation Serif", fontsize=16]; edge [fontname="Liberation Serif", fontsize=14, arrowhead=none, penwidth=1.2];
+category [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#e8e8e8"><B>category</B></TD></TR><TR><TD ALIGN="LEFT">PK id</TD></TR><TR><TD ALIGN="LEFT">name, slug (унік.)</TD></TR></TABLE>>];
+app_user [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#e8e8e8"><B>app_user</B></TD></TR><TR><TD ALIGN="LEFT">PK id</TD></TR><TR><TD ALIGN="LEFT">email (унік.), full_name, phone</TD></TR><TR><TD ALIGN="LEFT">password_hash (Argon2id)</TD></TR><TR><TD ALIGN="LEFT">role: CLIENT | MANAGER</TD></TR></TABLE>>];
+equipment_type [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#e8e8e8"><B>equipment_type</B></TD></TR><TR><TD ALIGN="LEFT">PK id, FK category_id</TD></TR><TR><TD ALIGN="LEFT">name, brand, description</TD></TR><TR><TD ALIGN="LEFT">deposit, service_buffer_days</TD></TR><TR><TD ALIGN="LEFT">max_rental_days, late_fee_multiplier</TD></TR><TR><TD ALIGN="LEFT">active, version</TD></TR></TABLE>>];
+tariff [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#e8e8e8"><B>tariff</B></TD></TR><TR><TD ALIGN="LEFT">PK id, FK equipment_type_id</TD></TR><TR><TD ALIGN="LEFT">min_days, daily_rate</TD></TR><TR><TD ALIGN="LEFT">UNIQUE (тип, min_days)</TD></TR></TABLE>>];
+equipment_unit [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#e8e8e8"><B>equipment_unit</B></TD></TR><TR><TD ALIGN="LEFT">PK id, FK equipment_type_id</TD></TR><TR><TD ALIGN="LEFT">inventory_number (унік.)</TD></TR><TR><TD ALIGN="LEFT">status (3 стани)</TD></TR></TABLE>>];
+booking [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#e8e8e8"><B>booking</B></TD></TR><TR><TD ALIGN="LEFT">PK id</TD></TR><TR><TD ALIGN="LEFT">FK client_id, equipment_type_id, unit_id</TD></TR><TR><TD ALIGN="LEFT">start_date, end_date, buffer_days</TD></TR><TR><TD ALIGN="LEFT">blocked = [start, end + 1 + buffer)</TD></TR><TR><TD ALIGN="LEFT">status, version</TD></TR><TR><TD ALIGN="LEFT">rental_days, daily_rate, rental_cost</TD></TR><TR><TD ALIGN="LEFT">deposit, late_fee, actual_return_date</TD></TR><TR><TD ALIGN="LEFT">EXCLUDE (unit_id =, blocked &amp;&amp;)</TD></TR></TABLE>>];
+booking_event [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#e8e8e8"><B>booking_event</B></TD></TR><TR><TD ALIGN="LEFT">PK id, FK booking_id, actor_id</TD></TR><TR><TD ALIGN="LEFT">event_type</TD></TR><TR><TD ALIGN="LEFT">from_status, to_status</TD></TR><TR><TD ALIGN="LEFT">note, occurred_at</TD></TR></TABLE>>];
+category -> equipment_type [taillabel="1", headlabel="0..*", labeldistance=1.8, labelangle=35];
+equipment_type -> tariff [taillabel="1", headlabel="0..*", labeldistance=1.8, labelangle=35];
+equipment_type -> equipment_unit [taillabel="1", headlabel="0..*", labeldistance=1.8, labelangle=35];
+equipment_unit -> booking [taillabel="1", headlabel="0..*", labeldistance=1.8, labelangle=35];
+equipment_type -> booking [taillabel="1", headlabel="0..*", labeldistance=1.8, labelangle=35];
+app_user -> booking [taillabel="1", headlabel="0..*", labeldistance=1.8, labelangle=35];
+booking -> booking_event [taillabel="1", headlabel="0..*", labeldistance=1.8, labelangle=35];
+app_user -> booking_event [taillabel="1", headlabel="0..*", labeldistance=1.8, labelangle=35];
+{rank=same; category; app_user} {rank=same; tariff; equipment_unit}
+}

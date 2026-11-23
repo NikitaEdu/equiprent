@@ -1,0 +1,3 @@
+  graph [fontname="Liberation Serif", nodesep=0.45, ranksep=0.3, pad=0.15];
+  node  [fontname="Liberation Serif", fontsize=14, shape=box, style="rounded,filled", fillcolor=white, penwidth=1.3, margin="0.14,0.06"];
+  edge  [fontname="Liberation Serif", fontsize=13, penwidth=1.1, arrowsize=0.7];
